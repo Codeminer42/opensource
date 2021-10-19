@@ -6,6 +6,7 @@ import Flex from './Flex'
 import Footer from './Footer'
 import Header from './Header'
 import Heading from './Heading'
+import Hero from './Hero'
 import Icon from './Icon'
 import Logo from './Logo'
 import Section from './Section'
@@ -20,6 +21,7 @@ export {
   Footer,
   Header,
   Heading,
+  Hero,
   Icon,
   Logo,
   Section,
