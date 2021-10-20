@@ -6,20 +6,20 @@ import {
   Footer,
   Header,
   Heading,
-  Icon,
+  Project,
   Section,
   Text,
 } from '@/components'
 import Box from '@/components/Box'
 import Grid from '@/components/Grid'
 import { Hacktoberfest } from '@/hacktoberfest'
-import { Project } from '@/domain/Project'
+import { Project as ProjectType } from '@/domain/Project'
 import { getProjects } from '@/repositories/projectsRepository'
 import type { NextPage, GetStaticProps, GetStaticPropsResult } from 'next'
 import Head from 'next/head'
 
 type HomeProps = {
-  projects: Project[]
+  projects: ProjectType[]
 }
 
 const Home: NextPage<HomeProps> = ({ projects }) => {
@@ -76,46 +76,8 @@ const Home: NextPage<HomeProps> = ({ projects }) => {
               gridGap='4'
               pt={['4', '4', '5']}
             >
-              {projects.map((project) => (
-                <Box p={['3', '4']} bg='white' key={project.repository}>
-                  <Heading
-                    as='h3'
-                    fontSize={['6', '7']}
-                    fontStyle='normal'
-                    color='red'
-                  >
-                    {project.name}
-                  </Heading>
-
-                  <Flex mt='1'>
-                    <Heading as='p' fontWeight='700' color='blue'>
-                      <Flex as='span' alignItems='center'>
-                        <Icon mr='1' name='star' color='blue' /> {project.stars}
-                      </Flex>
-                    </Heading>
-
-                    <Heading as='p' fontWeight='700' color='blue' ml='3'>
-                      <Flex as='span' alignItems='center'>
-                        <Icon name='fork' color='blue' /> {project.forks}
-                      </Flex>
-                    </Heading>
-                  </Flex>
-
-                  <Text mt={['3', '3', '4']} height='95px'>
-                    {project.description}
-                  </Text>
-
-                  <Flex mt={3} justifyContent='center'>
-                    <Button
-                      as='a'
-                      href={project.repository}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                    >
-                      Check Repository
-                    </Button>
-                  </Flex>
-                </Box>
+              {projects.map((info) => (
+                <Project key={info.name} project={info} />
               ))}
             </Grid>
           </Container>
