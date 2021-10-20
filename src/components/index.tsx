@@ -8,7 +8,6 @@ import Header from './Header'
 import Heading from './Heading'
 import Icon from './Icon'
 import Logo from './Logo'
-import Project from './Project'
 import Section from './Section'
 import Text from './Text'
 
@@ -23,7 +22,6 @@ export {
   Heading,
   Icon,
   Logo,
-  Project,
   Section,
   Text,
 }
