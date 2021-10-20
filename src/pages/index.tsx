@@ -12,13 +12,13 @@ import {
 } from '@/components'
 import Box from '@/components/Box'
 import { Hacktoberfest } from '@/hacktoberfest'
-import { Project as ProjectType } from '@/domain/Project'
+import { Project } from '@/domain/Project'
 import { getProjects } from '@/repositories/projectsRepository'
 import type { NextPage, GetStaticProps, GetStaticPropsResult } from 'next'
 import Head from 'next/head'
 
 type HomeProps = {
-  projects: ProjectType[]
+  projects: Project[]
 }
 
 const Home: NextPage<HomeProps> = ({ projects }) => {

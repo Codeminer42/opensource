@@ -1,8 +1,8 @@
 import { Container, Heading, Section, Grid, ProjectCard } from '@/components'
-import { Project as ProjectType } from '@/domain/Project'
+import { Project } from '@/domain/Project'
 
 type ProjectsProps = {
-  projects: ProjectType[]
+  projects: Project[]
 }
 
 const Projects = ({ projects }: ProjectsProps) => (
