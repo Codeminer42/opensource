@@ -4,11 +4,13 @@ import Button from './Button'
 import Container from './Container'
 import Flex from './Flex'
 import Footer from './Footer'
+import Grid from './Grid'
 import Header from './Header'
 import Heading from './Heading'
 import Icon from './Icon'
 import Logo from './Logo'
-import Project from './Project'
+import ProjectCard from './ProjectCard'
+import Projects from './Projects'
 import Section from './Section'
 import Text from './Text'
 
@@ -19,11 +21,13 @@ export {
   Container,
   Flex,
   Footer,
+  Grid,
   Header,
   Heading,
   Icon,
   Logo,
-  Project,
+  ProjectCard,
+  Projects,
   Section,
   Text,
 }

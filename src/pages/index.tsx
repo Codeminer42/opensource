@@ -6,12 +6,11 @@ import {
   Footer,
   Header,
   Heading,
-  Project,
+  Projects,
   Section,
   Text,
 } from '@/components'
 import Box from '@/components/Box'
-import Grid from '@/components/Grid'
 import { Hacktoberfest } from '@/hacktoberfest'
 import { Project as ProjectType } from '@/domain/Project'
 import { getProjects } from '@/repositories/projectsRepository'
@@ -65,23 +64,7 @@ const Home: NextPage<HomeProps> = ({ projects }) => {
           </Container>
         </Section>
 
-        <Section bg='gray.100' pb={['5', '6', '7']}>
-          <Container>
-            <Heading color='blue' fontSize={['7', '8', '9']}>
-              Projects
-            </Heading>
-
-            <Grid
-              gridTemplateColumns={['1fr', '1fr', '1fr 1fr 1fr']}
-              gridGap='4'
-              pt={['4', '4', '5']}
-            >
-              {projects.map((info) => (
-                <Project key={info.name} project={info} />
-              ))}
-            </Grid>
-          </Container>
-        </Section>
+        <Projects projects={projects} />
 
         <Hacktoberfest />
 

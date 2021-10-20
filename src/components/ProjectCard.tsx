@@ -1,11 +1,11 @@
 import { Box, Heading, Flex, Icon, Text, Button } from '@/components'
 import { Project as ProjectType } from '@/domain/Project'
 
-interface Props {
+type ProjectCardProps = {
   project: ProjectType
 }
 
-const Project = ({ project }: Props) => (
+const ProjectCard = ({ project }: ProjectCardProps) => (
   <Box p={['3', '4']} bg='white' key={1}>
     <Heading as='h3' fontSize={['6', '7']} fontStyle='normal' color='red'>
       {project.name}
@@ -42,4 +42,4 @@ const Project = ({ project }: Props) => (
   </Box>
 )
 
-export default Project
+export default ProjectCard
