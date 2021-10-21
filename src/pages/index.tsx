@@ -6,12 +6,11 @@ import {
   Footer,
   Header,
   Heading,
-  Icon,
+  Projects,
   Section,
   Text,
 } from '@/components'
 import Box from '@/components/Box'
-import Grid from '@/components/Grid'
 import { Hacktoberfest } from '@/hacktoberfest'
 import { Project } from '@/domain/Project'
 import { getProjects } from '@/repositories/projectsRepository'
@@ -65,61 +64,7 @@ const Home: NextPage<HomeProps> = ({ projects }) => {
           </Container>
         </Section>
 
-        <Section bg='gray.100' pb={['5', '6', '7']}>
-          <Container>
-            <Heading color='blue' fontSize={['7', '8', '9']}>
-              Projects
-            </Heading>
-
-            <Grid
-              gridTemplateColumns={['1fr', '1fr', '1fr 1fr 1fr']}
-              gridGap='4'
-              pt={['4', '4', '5']}
-            >
-              {projects.map((project) => (
-                <Box p={['3', '4']} bg='white' key={project.repository}>
-                  <Heading
-                    as='h3'
-                    fontSize={['6', '7']}
-                    fontStyle='normal'
-                    color='red'
-                  >
-                    {project.name}
-                  </Heading>
-
-                  <Flex mt='1'>
-                    <Heading as='p' fontWeight='700' color='blue'>
-                      <Flex as='span' alignItems='center'>
-                        <Icon mr='1' name='star' color='blue' /> {project.stars}
-                      </Flex>
-                    </Heading>
-
-                    <Heading as='p' fontWeight='700' color='blue' ml='3'>
-                      <Flex as='span' alignItems='center'>
-                        <Icon name='fork' color='blue' /> {project.forks}
-                      </Flex>
-                    </Heading>
-                  </Flex>
-
-                  <Text mt={['3', '3', '4']} height='95px'>
-                    {project.description}
-                  </Text>
-
-                  <Flex mt={3} justifyContent='center'>
-                    <Button
-                      as='a'
-                      href={project.repository}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                    >
-                      Check Repository
-                    </Button>
-                  </Flex>
-                </Box>
-              ))}
-            </Grid>
-          </Container>
-        </Section>
+        <Projects projects={projects} />
 
         <Hacktoberfest />
 
