@@ -1,5 +1,7 @@
+import type { NextPage, GetStaticProps, GetStaticPropsResult } from 'next'
+import Head from 'next/head'
 import {
-  Button,
+  Box,
   Careers,
   Container,
   Flex,
@@ -10,12 +12,9 @@ import {
   Section,
   Text,
 } from '@/components'
-import Box from '@/components/Box'
 import { Hacktoberfest } from '@/hacktoberfest'
 import { Project } from '@/domain/Project'
 import { getProjects } from '@/repositories/projectsRepository'
-import type { NextPage, GetStaticProps, GetStaticPropsResult } from 'next'
-import Head from 'next/head'
 
 type HomeProps = {
   projects: Project[]
