@@ -8,7 +8,7 @@ const Hero = () => (
       </Heading>
 
       <Heading
-        as="q"
+        as='q'
         fontSize={['6', '7', '8']}
         fontWeight='700'
         color='red'
