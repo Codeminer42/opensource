@@ -7,12 +7,7 @@ const Hero = () => (
         Open Source
       </Heading>
 
-      <Heading
-        as="q"
-        fontSize={['6', '7', '8']}
-        fontWeight='700'
-        color='red'
-      >
+      <Heading as='q' fontSize={['6', '7', '8']} fontWeight='700' color='red'>
         In real open source, you have the right to control your own destiny
       </Heading>
 
