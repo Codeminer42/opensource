@@ -1,4 +1,4 @@
-import { Section, Container, Heading, Flex, Text } from '@/components'
+import { Section, Container, Heading, Flex } from '@/components'
 
 const Hero = () => (
   <Section py={['5', '6', '7']}>
@@ -12,7 +12,7 @@ const Hero = () => (
       </Heading>
 
       <Heading
-        as={Text}
+        as='p'
         mt='3'
         ml='auto'
         fontSize={['5', '6']}
