@@ -17,7 +17,7 @@ const Hero = () => (
       </Heading>
 
       <Heading
-        as={Text}
+        as='p'
         mt='3'
         ml='auto'
         fontSize={['5', '6']}
