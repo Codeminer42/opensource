@@ -1,17 +1,6 @@
 import type { NextPage, GetStaticProps, GetStaticPropsResult } from 'next'
 import Head from 'next/head'
-import {
-  Box,
-  Careers,
-  Container,
-  Flex,
-  Footer,
-  Header,
-  Heading,
-  Projects,
-  Section,
-  Text,
-} from '@/components'
+import { Box, Careers, Footer, Header, Hero, Projects } from '@/components'
 import { Hacktoberfest } from '@/hacktoberfest'
 import { Project } from '@/domain/Project'
 import { getProjects } from '@/repositories/projectsRepository'
@@ -34,34 +23,7 @@ const Home: NextPage<HomeProps> = ({ projects }) => {
       <Header />
 
       <Box as='main'>
-        <Section py={['5', '6', '7']}>
-          <Container as={Flex} flexDirection='column'>
-            <Heading mb='3' fontSize={['7', '8', '10']}>
-              Open Source
-            </Heading>
-
-            <Heading
-              as={Text}
-              fontSize={['6', '7', '8']}
-              fontWeight='700'
-              color='red'
-            >
-              In real open source, you have the right to control your own
-              destiny
-            </Heading>
-
-            <Heading
-              as={Text}
-              mt='3'
-              ml='auto'
-              fontSize={['5', '6']}
-              fontWeight='700'
-              color='red'
-            >
-              - Linus Torvalds
-            </Heading>
-          </Container>
-        </Section>
+        <Hero />
 
         <Projects projects={projects} />
 

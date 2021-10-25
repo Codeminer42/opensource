@@ -8,6 +8,7 @@ import Footer from './Footer'
 import Grid from './Grid'
 import Header from './Header'
 import Heading from './Heading'
+import Hero from './Hero'
 import Icon from './Icon'
 import Logo from './Logo'
 import ProjectCard from './ProjectCard'
@@ -26,6 +27,7 @@ export {
   Grid,
   Header,
   Heading,
+  Hero,
   Icon,
   Logo,
   ProjectCard,
