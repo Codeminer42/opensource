@@ -30,7 +30,7 @@ const OtherProjectCard = ({ project }: OtherProjectCardProps) => (
       </Heading>
     </Flex>
 
-    <Text mt={['2', '2', '3']} fontSize={['4', '4', '5']} height='115px'>
+    <Text mt={['2', '2', '3']} fontSize='5' height={['95px', '115px']}>
       {project.description}
     </Text>
 
