@@ -1,7 +1,6 @@
 import type { NextPage, GetStaticProps, GetStaticPropsResult } from 'next'
 import Head from 'next/head'
 import { Box, Careers, Footer, Header, Hero, Projects } from '@/components'
-import { Hacktoberfest } from '@/hacktoberfest'
 import { Project } from '@/domain/Project'
 import { getProjects } from '@/repositories/projectsRepository'
 
@@ -26,8 +25,6 @@ const Home: NextPage<HomeProps> = ({ projects }) => {
         <Hero />
 
         <Projects projects={projects} />
-
-        <Hacktoberfest />
 
         <Careers />
       </Box>
