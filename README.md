@@ -12,6 +12,15 @@ First, install the dependencies:
 yarn install
 ```
 
+Next, create an `.env.local` file as following or clone the example one:
+
+```env
+#Google Analytics ID
+NEXT_PUBLIC_GA_ID=G-123123123
+```
+
+_Remember to set up the variables according to your project._
+
 Then, run the development server:
 
 ```bash
