@@ -9,7 +9,6 @@ import {
   Projects,
   OtherProjects,
 } from '@/components'
-import { Hacktoberfest } from '@/hacktoberfest'
 import { Project } from '@/domain/Project'
 import { getProjects } from '@/repositories/projectsRepository'
 import { getOtherProjects } from '@/repositories/otherProjectsRepository'
@@ -38,8 +37,6 @@ const Home: NextPage<HomeProps> = ({ projects, otherProjects }) => {
         <Projects projects={projects} />
 
         <OtherProjects projects={otherProjects} />
-
-        <Hacktoberfest />
 
         <Careers />
       </Box>
