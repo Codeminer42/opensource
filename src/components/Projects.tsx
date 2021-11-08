@@ -6,7 +6,7 @@ type ProjectsProps = {
 }
 
 const Projects = ({ projects }: ProjectsProps) => (
-  <Section bg='gray.100' pb={['5', '6', '7']}>
+  <Section bg='gray.100'>
     <Container>
       <Heading color='blue' fontSize={['7', '8', '9']}>
         Projects

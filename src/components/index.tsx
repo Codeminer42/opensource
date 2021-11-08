@@ -13,6 +13,8 @@ import Icon from './Icon'
 import Logo from './Logo'
 import ProjectCard from './ProjectCard'
 import Projects from './Projects'
+import OtherProjectCard from './OtherProjectCard'
+import OtherProjects from './OtherProjects'
 import Section from './Section'
 import Text from './Text'
 
@@ -32,6 +34,8 @@ export {
   Logo,
   ProjectCard,
   Projects,
+  OtherProjectCard,
+  OtherProjects,
   Section,
   Text,
 }
