@@ -40,6 +40,7 @@ const OtherProjectCard = ({ project }: OtherProjectCardProps) => (
         href={project.repository}
         target='_blank'
         rel='noopener noreferrer'
+        textAlign='center'
       >
         Check Repository
       </Button>
