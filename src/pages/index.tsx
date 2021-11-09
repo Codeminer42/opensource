@@ -10,8 +10,8 @@ import {
   OtherProjects,
 } from '@/components'
 import { Project } from '@/domain/Project'
-import { getProjects } from '@/repositories/projectsRepository'
 import { getOtherProjects } from '@/repositories/otherProjectsRepository'
+import container from '@/container'
 
 type HomeProps = {
   projects: Project[]
@@ -49,7 +49,8 @@ const Home: NextPage<HomeProps> = ({ projects, otherProjects }) => {
 export const getStaticProps: GetStaticProps = async (): Promise<
   GetStaticPropsResult<HomeProps>
 > => {
-  const projects = await getProjects()
+  const { projectsRepository } = container
+  const projects = await projectsRepository.getProjects()
   const otherProjects = await getOtherProjects()
 
   return {
