@@ -2,7 +2,7 @@ import type { NextPage, GetStaticProps, GetStaticPropsResult } from 'next'
 import Head from 'next/head'
 import { Box, Careers, Footer, Header, Hero, Projects } from '@/components'
 import { Project } from '@/domain/Project'
-import { getProjects } from '@/repositories/projectsRepository'
+import container from '@/container'
 
 type HomeProps = {
   projects: Project[]
@@ -37,7 +37,8 @@ const Home: NextPage<HomeProps> = ({ projects }) => {
 export const getStaticProps: GetStaticProps = async (): Promise<
   GetStaticPropsResult<HomeProps>
 > => {
-  const projects = await getProjects()
+  const { projectsRepository } = container
+  const projects = await projectsRepository.getProjects()
 
   return {
     props: {
