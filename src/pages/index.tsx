@@ -14,7 +14,6 @@ import {
   OtherProjects,
 } from '@/components'
 import { Project } from '@/domain/Project'
-import { getOtherProjects } from '@/repositories/otherProjectsRepository'
 import container from '@/container'
 
 type HomeProps = {
@@ -53,9 +52,9 @@ const Home: NextPage<HomeProps> = ({ projects, otherProjects }) => {
 export const getServerSideProps: GetServerSideProps = async (): Promise<
   GetServerSidePropsResult<HomeProps>
 > => {
-  const { projectsRepository } = container
+  const { projectsRepository, otherProjectsRepository } = container
   const projects = await projectsRepository.getProjects()
-  const otherProjects = await getOtherProjects()
+  const otherProjects = await otherProjectsRepository.getOtherProjects()
 
   return {
     props: {
