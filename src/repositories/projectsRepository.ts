@@ -1,5 +1,5 @@
-import { Project } from '@/domain/Project'
-import { GithubApiService } from '@/services/githubApiService'
+import { Project, ProjectDTO, create } from '@/domain/Project'
+import { GithubApiService, Repo } from '@/services/githubApiService'
 
 type Dependencies = {
   githubApiService: GithubApiService
@@ -13,16 +13,19 @@ const ProjectsRepository = ({ githubApiService }: Dependencies) => {
 
     const projects = repos
       .filter((repo) => PROJECTS.includes(repo.name))
-      .map((repo) => ({
-        name: repo.name,
-        description: repo.description,
-        stars: repo.stargazers_count,
-        forks: repo.forks_count,
-        repository: repo.html_url,
-      }))
+      .map(repoToProjectDTO)
+      .map(create)
 
     return projects
   }
+
+  const repoToProjectDTO = (repo: Repo): ProjectDTO => ({
+    name: repo.name,
+    description: repo.description,
+    stars: repo.stargazers_count,
+    forks: repo.forks_count,
+    repository: repo.html_url,
+  })
 
   return {
     getProjects,
