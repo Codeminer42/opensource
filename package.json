@@ -13,6 +13,7 @@
     "node": "16.2.0"
   },
   "dependencies": {
+    "@octokit/core": "^3.5.1",
     "@styled-system/css": "^5.1.5",
     "@styled-system/theme-get": "^5.1.2",
     "next": "11.1.0",

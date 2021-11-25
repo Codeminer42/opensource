@@ -48,5 +48,12 @@ const availableProjects: Project[] = [
   },
 ]
 
-export const getOtherProjects = async (): Promise<Project[]> =>
-  availableProjects
+const OtherProjects = () => {
+  const getOtherProjects = async (): Promise<Project[]> => availableProjects
+
+  return {
+    getOtherProjects,
+  }
+}
+
+export default OtherProjects

@@ -1,29 +1,35 @@
-import { Project } from '@/domain/Project'
+import { Project, ProjectDTO, create } from '@/domain/Project'
+import { GithubApiService, Repo } from '@/services/githubApiService'
 
-const availableProjects: Project[] = [
-  {
-    name: 'Central',
-    description:
-      'Fork and Evolution of the Fulcrum project - An agile project planning tool and Pivotal Tracker drop-in replacement',
-    stars: 284,
-    forks: 59,
-    repository: 'https://github.com/Codeminer42/cm42-central',
-  },
-  {
-    name: 'Punchclock',
-    description:
-      'A simple electronic punch clock to track hours spent on projects',
-    stars: 16,
-    forks: 11,
-    repository: 'https://github.com/Codeminer42/Punchclock',
-  },
-  {
-    name: 'Marvin',
-    description: 'Marvin is a chat bot built on the Hubot framework',
-    stars: 6,
-    forks: 3,
-    repository: 'https://github.com/Codeminer42/marvin-cm42',
-  },
-]
+type Dependencies = {
+  githubApiService: GithubApiService
+}
 
-export const getProjects = async (): Promise<Project[]> => availableProjects
+const ProjectsRepository = ({ githubApiService }: Dependencies) => {
+  const PROJECTS = ['cm42-central', 'Punchclock', 'marvin-cm42']
+
+  const getProjects = async (): Promise<Project[]> => {
+    const repos = await githubApiService.getRepos()
+
+    const projects = repos
+      .filter((repo) => PROJECTS.includes(repo.name))
+      .map(repoToProjectDTO)
+      .map(create)
+
+    return projects
+  }
+
+  const repoToProjectDTO = (repo: Repo): ProjectDTO => ({
+    name: repo.name,
+    description: repo.description,
+    stars: repo.stargazers_count,
+    forks: repo.forks_count,
+    repository: repo.html_url,
+  })
+
+  return {
+    getProjects,
+  }
+}
+
+export default ProjectsRepository
