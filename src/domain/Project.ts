@@ -1,8 +1,8 @@
 export type Project = {
   name: string
-  description: string
-  stars: number
-  forks: number
+  description: string | null
+  stars?: number
+  forks?: number
   repository: string
 }
 
